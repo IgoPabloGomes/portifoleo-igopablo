@@ -207,9 +207,9 @@ section {
 }
 
 .logo-linkedin {
-  height: 100px;
+  height: 40px;         /* Altura mais padrão pra logo */
   width: auto;
-  margin-top: 10px;
+  margin-top: 20px;     /* Espaço um pouco maior pra respiração visual */
   transition: transform 0.3s;
 }
 
