@@ -213,3 +213,13 @@ section {
 .logo-linkedin:hover {
   transform: scale(1.1);
 }
+
+footer {
+  background-color: #fff;
+  padding: 30px;
+  text-align: center; /* <-- isso centraliza o texto */
+  font-size: 14px;
+  color: #555;
+  margin-top: 40px;
+  border-top: 1px solid #ddd;
+}
