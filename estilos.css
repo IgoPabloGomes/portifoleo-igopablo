@@ -103,7 +103,7 @@ header {
   flex-direction: column; /* empilha elementos verticalmente */
   padding: 100px 20px 40px;
   position: relative;
-  background: url("img/Banner.png") no-repeat center center;
+  background: url("Banner.png") no-repeat center center;
   background-size: cover;
   gap: 20px;
   color: white;
