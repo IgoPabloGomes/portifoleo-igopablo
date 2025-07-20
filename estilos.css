@@ -146,7 +146,7 @@ section {
   width: 90vw;
   margin: auto;
   position: relative;
-  overflow: visible; /* permite que o preview escape da área */
+  overflow: hidden; /* Corta o que passa dos limites */
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
@@ -154,11 +154,11 @@ section {
 .carousel-wrapper {
   display: flex;
   transition: transform 0.4s ease-in-out;
-  gap: 10px;
+  width: calc(85% * 5 + 10px * 4); /* largura total dos slides + gap */
 }
 
 .carousel-slide {
-  flex: 0 0 85%; /* exibe 1 slide com pedacinho do próximo */
+  flex: 0 0 85%; /* um slide visível e parte do próximo */
   margin-right: 10px;
   display: flex;
   justify-content: center;
