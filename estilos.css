@@ -268,12 +268,21 @@ footer {
     height: 50px;
   }
 
-  .carousel-slide {
-    height: 300px;
-    min-width: 90%;
-  }
-
   .carousel-container {
     width: 95vw;
   }
+
+  .carousel-slide {
+    min-width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
 }
+
