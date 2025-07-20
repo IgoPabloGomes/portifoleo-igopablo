@@ -1,6 +1,6 @@
 /* estilos.css */
 
-/* Fonte base */
+/* Tipografia base */
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
@@ -56,18 +56,20 @@ nav ul li a:hover {
   padding: 0 20px;
 }
 
-/* Header com imagem de fundo */
+/* Header com banner */
 header {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   padding: 100px 20px 40px;
   position: relative;
-  background: url("../img/Banner.png") no-repeat center center;
+  background-image: url("../img/Banner.png");
   background-size: cover;
-  gap: 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
   color: white;
+  gap: 20px;
   z-index: 1;
   overflow: hidden;
   text-align: left;
@@ -125,7 +127,7 @@ header::before {
   background-color: #0056b3;
 }
 
-/* Quebra visual */
+/* Linha divisória */
 hr {
   margin: 20px auto 10px;
   border: none;
@@ -140,7 +142,7 @@ section {
   padding: 40px 20px;
 }
 
-/* Carrossel responsivo */
+/* Carrossel */
 .carousel-container {
   max-width: 900px;
   width: 90vw;
@@ -169,18 +171,15 @@ section {
 }
 
 .carousel-slide img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
+  width: 100%;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
   display: block;
-  pointer-events: none;
-  user-select: none;
+  max-height: 500px;
 }
 
-/* Botões de navegação do carrossel */
+/* Botões do carrossel */
 .carousel-button {
   position: absolute;
   top: 50%;
@@ -231,7 +230,7 @@ footer {
   transform: scale(1.1);
 }
 
-/* Responsividade para mobile */
+/* Responsividade mobile */
 @media (max-width: 600px) {
   header {
     padding: 80px 10px 20px;
@@ -249,15 +248,14 @@ footer {
     min-width: 100%;
   }
 
-  .carousel-container {
-    width: 100vw;
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
   }
 
-  .carousel-slide img {
-    max-width: 100%;
-    max-height: 300px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+  .carousel-container {
+    width: 100vw;
   }
 }
