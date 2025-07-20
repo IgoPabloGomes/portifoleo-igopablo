@@ -13,6 +13,7 @@ h1, h2, h3, nav a, .button {
   color: #222;
 }
 
+
 /* Navbar fixa */
 nav {
   position: fixed;
@@ -48,25 +49,66 @@ nav ul li a:hover {
   color: #0056b3;
 }
 
-/* Container centralizado */
+/* Container centralizado para todo conteúdo */
 .container {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Header */
+/* Estilo do header geral */
+.perfil-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 0;
+}
+
+/* Estilo da foto de perfil */
+.foto-perfil {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da seção à direita da foto */
+.perfil-info {
+  flex: 1;
+}
+
+.perfil-info p {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.button {
+  padding: 10px 18px;
+  background-color: #0077b5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #005b91;
+}
+
+
 header {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
+  align-items: flex-start; /* alinha os itens no topo */
+  justify-content: flex-start; /* conteúdo alinhado à esquerda */
+  flex-direction: column; /* empilha elementos verticalmente */
   padding: 100px 20px 40px;
   position: relative;
   background: url("Banner.png") no-repeat center center;
   background-size: cover;
+  background-attachment: fixed; /* opcional */
   background-position: center;
   background-repeat: no-repeat;
+  gap: 20px;
   color: white;
   z-index: 1;
   overflow: hidden;
@@ -77,36 +119,18 @@ header::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* fundo escuro com 50% */
   z-index: -1;
 }
 
-/* Perfil */
-.perfil-container {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  padding: 40px 0;
-}
-
 .foto-perfil {
-  width: 180px;
+  width: 100px;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   flex-shrink: 0;
 }
 
-.perfil-info {
-  flex: 1;
-}
-
-.perfil-info p {
-  margin-top: 10px;
-  line-height: 1.5;
-}
-
-/* Botão */
 .button {
   padding: 12px 24px;
   background-color: #007bff;
@@ -125,7 +149,6 @@ header::before {
   background-color: #0056b3;
 }
 
-/* Linha divisória */
 hr {
   margin: 20px auto 10px;
   border: none;
@@ -139,48 +162,46 @@ section {
   padding: 40px 20px;
 }
 
-/* Carrossel */
+/* Carrossel container com peek do próximo slide */
 .carousel-container {
   max-width: 900px;
-  width: 90vw;
+  width: 80vw; /* responsivo */
   margin: auto;
   position: relative;
-  overflow-x: auto; /* deixa scroll horizontal caso precise */
+  overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  -webkit-overflow-scrolling: touch; /* para smooth scroll no iOS */
 }
 
+/* Wrapper que vai deslizar */
 .carousel-wrapper {
   display: flex;
-  gap: 10px; /* espaçamento entre os slides */
+  transition: transform 0.4s ease-in-out;
 }
 
+/* Slides */
 .carousel-slide {
-  flex: 0 0 auto; /* não encolhe, não cresce, largura automática */
-  width: 90vw; /* largura responsiva, ocupa quase toda a tela */
-  max-width: 600px; /* mas no desktop não passa de 600px */
+  min-width: 80%; /* ocupa 80% da largura do container para "peek" */
+  margin-right: 10px;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
   user-select: none;
+  flex-shrink: 0;
+  height: 500px; /* altura fixa */
+  object-fit: contain;
 }
 
 .carousel-slide img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 100%;
   object-fit: contain;
-  display: block;
-  user-select: none;
+  border-radius: 8px;
   pointer-events: none;
+  user-select: none;
+  display: block;
 }
 
-/* Botões carrossel */
+/* Botões do carrossel */
 .carousel-button {
   position: absolute;
   top: 50%;
@@ -209,7 +230,6 @@ section {
   right: 10px;
 }
 
-/* Rodapé */
 footer {
   background-color: #fff;
   padding: 30px;
@@ -220,9 +240,9 @@ footer {
   border-top: 1px solid #ddd;
 }
 
-/* Logo LinkedIn */
+/* Logo LinkedIn maior */
 .logo-linkedin {
-  width: 60px;
+  width: 60px; /* dobro do tamanho anterior (era 30px) */
   margin-top: 10px;
   transition: transform 0.3s;
 }
@@ -231,28 +251,12 @@ footer {
   transform: scale(1.1);
 }
 
-/* Responsividade */
+/* Responsividade para telas pequenas */
 @media (max-width: 600px) {
   header {
-    padding: 80px 15px 30px;
-    text-align: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center top;
-  }
-
-  .perfil-container {
+    padding: 80px 10px 20px;
     flex-direction: column;
-    align-items: center;
-  }
-
-  .foto-perfil {
-    width: 120px;
-    height: auto;
-  }
-
-  .perfil-info {
-    text-align: center;
+    gap: 15px;
   }
 
   .button {
@@ -262,10 +266,33 @@ footer {
   }
 
   .carousel-slide {
+    height: 300px;
     min-width: 90%;
   }
 
   .carousel-container {
     width: 95vw;
   }
+@media (max-width: 600px) {
+  header {
+    background-size: cover;
+    background-position: center top;
+    padding: 80px 15px 30px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .perfil-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .foto-perfil {
+    width: 120px;
+    height: 120px;
+  }
+
+  .perfil-info {
+    text-align: center;
+  } 
 }
