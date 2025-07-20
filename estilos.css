@@ -172,19 +172,12 @@ section {
 .carousel-slide img {
   width: 100%;
   height: auto;
-  max-height: 80vh; /* limita a altura a 80% da tela */
+  max-height: 80vh;
   object-fit: contain;
   border-radius: 8px;
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 8px;
+  display: block;
   pointer-events: none;
   user-select: none;
-  display: block;
 }
 
 /* Botões carrossel */
@@ -255,7 +248,7 @@ footer {
 
   .foto-perfil {
     width: 120px;
-    height: 120px;
+    height: auto;
   }
 
   .perfil-info {
@@ -268,21 +261,11 @@ footer {
     height: 50px;
   }
 
+  .carousel-slide {
+    min-width: 90%;
+  }
+
   .carousel-container {
     width: 95vw;
   }
-
-  .carousel-slide {
-    min-width: 100%;
-    height: auto;
-    padding: 0;
-  }
-
-  .carousel-slide img {
-    width: 100%;
-    height: auto;
-    max-height: none;
-    object-fit: contain;
-  }
 }
-
