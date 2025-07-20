@@ -186,7 +186,7 @@ section {
   border-radius: 50%;
   transition: background-color 0.3s ease;
   user-select: none;
-  z-index: 10;
+  z-index: 20; /* elevado para não ser encoberto */
   width: 48px;
   height: 48px;
   display: flex;
@@ -194,17 +194,19 @@ section {
   align-items: center;
 }
 
+/* Posiciona as setas totalmente fora dos slides */
+.carousel-button.prev {
+  left: -60px;
+}
+
+.carousel-button.next {
+  right: -60px;
+}
+
 .carousel-button:hover {
   background-color: rgba(0, 123, 255, 1);
 }
 
-.carousel-button.prev {
-  left: -24px;
-}
-
-.carousel-button.next {
-  right: -24px;
-}
 
 .logo-linkedin {
   height: 40px;         /* Altura mais padrão pra logo */
