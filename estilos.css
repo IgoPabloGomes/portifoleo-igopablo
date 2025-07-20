@@ -16,11 +16,13 @@ h1, h2, h3, nav a, .button {
 nav {
   position: fixed;
   top: 0;
-  width: 20%;
-  background-color: #fff;
+  width: 100%;
+  background-color: #ffffff;
   border-bottom: 1px solid #ddd;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   z-index: 999;
+  display: flex;
+  justify-content: center; /* centraliza o conteúdo */
 }
 
 nav ul {
@@ -29,7 +31,7 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 10px 0;
-  flex-wrap: wrap;
+  gap: 40px;
 }
 
 nav ul li {
@@ -144,7 +146,7 @@ section {
   width: 90vw;
   margin: auto;
   position: relative;
-  overflow-x: hidden;
+  overflow: visible;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
