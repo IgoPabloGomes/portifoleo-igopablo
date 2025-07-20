@@ -1,0 +1,275 @@
+/* estilos.css */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1, h2, h3, nav a, .button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #222;
+}
+
+
+/* Navbar fixa */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  z-index: 999;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #0056b3;
+}
+
+/* Container centralizado para todo conteúdo */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Estilo do header geral */
+.perfil-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 0;
+}
+
+/* Estilo da foto de perfil */
+.foto-perfil {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da seção à direita da foto */
+.perfil-info {
+  flex: 1;
+}
+
+.perfil-info p {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.button {
+  padding: 10px 18px;
+  background-color: #0077b5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #005b91;
+}
+
+
+header {
+  display: flex;
+  align-items: flex-start; /* alinha os itens no topo */
+  justify-content: flex-start; /* conteúdo alinhado à esquerda */
+  flex-direction: column; /* empilha elementos verticalmente */
+  padding: 100px 20px 40px;
+  position: relative;
+  background: url("../img/Banner.png") no-repeat center center;
+  background-size: cover;
+  gap: 20px;
+  color: white;
+  z-index: 1;
+  overflow: hidden;
+  text-align: left;
+}
+
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* fundo escuro com 50% */
+  z-index: -1;
+}
+
+.foto-perfil {
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+}
+
+.button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+  height: 42px;
+  align-self: center;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+hr {
+  margin: 20px auto 10px;
+  border: none;
+  border-top: 1px solid #ccc;
+  width: 90%;
+  max-width: 900px;
+}
+
+section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Carrossel container com peek do próximo slide */
+.carousel-container {
+  max-width: 900px;
+  width: 80vw; /* responsivo */
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Wrapper que vai deslizar */
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Slides */
+.carousel-slide {
+  min-width: 80%; /* ocupa 80% da largura do container para "peek" */
+  margin-right: 10px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  flex-shrink: 0;
+  height: 500px; /* altura fixa */
+  object-fit: contain;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  pointer-events: none;
+  user-select: none;
+  display: block;
+}
+
+/* Botões do carrossel */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.3);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  user-select: none;
+  z-index: 10;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0,0,0,0.6);
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+footer {
+  background-color: #fff;
+  padding: 30px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-top: 40px;
+  border-top: 1px solid #ddd;
+}
+
+/* Logo LinkedIn maior */
+.logo-linkedin {
+  width: 60px; /* dobro do tamanho anterior (era 30px) */
+  margin-top: 10px;
+  transition: transform 0.3s;
+}
+
+.logo-linkedin:hover {
+  transform: scale(1.1);
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+  header {
+    padding: 80px 10px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .button {
+    width: 100%;
+    font-size: 18px;
+    height: 50px;
+  }
+
+  .carousel-slide {
+    height: 300px;
+    min-width: 90%;
+  }
+
+  .carousel-container {
+    width: 95vw;
+  }
+  
+}
