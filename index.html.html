@@ -1,0 +1,113 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfólio - Igo Lopes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/estilos.css" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+
+<body>
+  <!-- MENU -->
+  <nav>
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#portfolio">Portfólio</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER COM FOTO E BOTÃO -->
+  <header id="inicio">
+  <div class="container perfil-container">
+    <img class="foto-perfil" src="img/FotodePerfil.png" alt="Igo Lopes" />
+    
+    <div class="perfil-info">
+      <a href="Portifolio-IGO.pdf" title="Visualizar PDF" target="_blank">
+        <button class="button">Visualizar PDF</button>
+      </a>
+      <p>
+        <strong>Igo Lopes</strong><br />
+        Engenheiro de Produção<br />
+        MBA em Gestão da Qualidade e Processos<br />
+        Black Belt Lean Six Sigma
+      </p>
+    </div>
+  </div>
+</header>
+
+
+
+  <hr />
+
+  <!-- PORTFÓLIO -->
+  <section id="portfolio">
+    <h2>Portfólio Visual</h2>
+    <div class="carousel-container">
+      <button class="carousel-button prev">&#10094;</button>
+      <div class="carousel-wrapper">
+        <img src="img/Slide1.png" class="carousel-slide" alt="Slide 1" />
+        <img src="img/Slide2.png" class="carousel-slide" alt="Slide 2" />
+        <img src="img/Slide3.png" class="carousel-slide" alt="Slide 3" />
+        <img src="img/Slide4.png" class="carousel-slide" alt="Slide 4" />
+        <img src="img/Slide5.png" class="carousel-slide" alt="Slide 5" />
+      </div>
+      <button class="carousel-button next">&#10095;</button>
+    </div>
+  </section>
+
+  <footer>
+      <!-- CONTATO -->
+  <section id="contato">
+    <h3>Contato</h3>
+    <p>
+      Igo Pablo Gomes Lopes<br />
+      WhatsApp: (61) 9 9634-7676 / 61 9 99296-4398<br />
+      E-mail: igopablogomes@gmail.com<br />
+    </p>
+    <a href="https://linkedin.com/in/igo-pablo-gomes-lopes" target="_blank" rel="noopener noreferrer">
+      <img src="img/Linkedin1.png" alt="LinkedIn" class="logo-linkedin" />
+    </a>
+  </section>
+    <p>© 2025 Igo Pablo Gomes Lopes. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const prevBtn = document.querySelector(".carousel-button.prev");
+    const nextBtn = document.querySelector(".carousel-button.next");
+    const wrapper = document.querySelector(".carousel-wrapper");
+    const slides = document.querySelectorAll(".carousel-slide");
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const slideWidth = slides[0].offsetWidth + 10;
+      const offset = -(slideWidth * currentIndex);
+      wrapper.style.transform = `translateX(${offset}px)`;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) currentIndex--;
+      updateCarousel();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < slides.length - 1) currentIndex++;
+      updateCarousel();
+    });
+
+    updateCarousel();
+  </script>
+
+  <script>
+    ScrollReveal().reveal('header', { delay: 200, distance: '40px', origin: 'top' });
+    ScrollReveal().reveal('#portfolio h2', { delay: 300 });
+    ScrollReveal().reveal('.carousel-container', { delay: 400 });
+    ScrollReveal().reveal('#contato', { delay: 500 });
+  </script>
+</body>
+</html>
