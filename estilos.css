@@ -215,20 +215,20 @@ section {
 }
 
 footer {
-  background-color: #ffffff;
+  background-color: #F2F2F2;
   padding: 30px 20px;
   text-align: center;
   font-size: 14px;
   color: #555;
-  margin-top: 15px;
+  margin-top: 5px;
   border-top: 1px solid #ddd;
   position: relative;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.03);
 }
 
 footer p {
-  margin-top: 15px;
-  font-weight: 500;
+  margin-top: 60px;
+  font-weight: 200;
   letter-spacing: 0.5px;
 }
 
