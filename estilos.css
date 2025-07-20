@@ -58,19 +58,14 @@ nav ul li a:hover {
 
 /* Header */
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;    /* Alinha tudo à esquerda */
-  justify-content: flex-start;
-  text-align: left;           /* Texto alinhado à esquerda */
-  padding: 100px 20px 40px;
+  display: block; /* remove qualquer flex centralizador do header */
+  padding: 100px 0 40px;
   position: relative;
   background-image: url("Banner.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   color: white;
-  gap: 20px;
   z-index: 1;
   overflow: hidden;
 }
@@ -86,9 +81,16 @@ header::before {
 /* Perfil */
 .perfil-container {
   display: flex;
-  align-items: flex-start;    /* Alinha imagem e conteúdo no topo esquerdo */
   justify-content: flex-start;
+  align-items: flex-start;
   gap: 30px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.perfil-info {
+  text-align: left;
 }
 
 .foto-perfil {
@@ -96,10 +98,6 @@ header::before {
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   flex-shrink: 0;
-}
-
-.perfil-info {
-  text-align: left;
 }
 
 .perfil-info p {
