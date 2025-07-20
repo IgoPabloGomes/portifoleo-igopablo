@@ -142,42 +142,42 @@ section {
 /* Carrossel */
 .carousel-container {
   max-width: 900px;
-  width: 80vw;
+  width: 90vw;
   margin: auto;
   position: relative;
-  overflow: hidden;
+  overflow-x: auto; /* deixa scroll horizontal caso precise */
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  -webkit-overflow-scrolling: touch; /* para smooth scroll no iOS */
 }
 
 .carousel-wrapper {
   display: flex;
-  transition: transform 0.4s ease-in-out;
+  gap: 10px; /* espaçamento entre os slides */
 }
 
 .carousel-slide {
-  min-width: 80%;
-  margin-right: 10px;
+  flex: 0 0 auto; /* não encolhe, não cresce, largura automática */
+  width: 90vw; /* largura responsiva, ocupa quase toda a tela */
+  max-width: 600px; /* mas no desktop não passa de 600px */
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  user-select: none;
-  flex-shrink: 0;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background-color: #fff;
+  user-select: none;
 }
 
 .carousel-slide img {
   width: 100%;
   height: auto;
-  max-height: 80vh;
-  object-fit: contain;
   border-radius: 8px;
+  object-fit: contain;
   display: block;
-  pointer-events: none;
   user-select: none;
+  pointer-events: none;
 }
 
 /* Botões carrossel */
