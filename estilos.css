@@ -1,4 +1,4 @@
-/* estilos.css */
+Esse é o css e quando eu abro o index aparece a imagem de fundo no header: /* estilos.css */
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -103,17 +103,15 @@ header {
   flex-direction: column; /* empilha elementos verticalmente */
   padding: 100px 20px 40px;
   position: relative;
-  background: url("Banner.png") no-repeat center center;
+  background: url("../img/Banner.png") no-repeat center center;
   background-size: cover;
-  background-attachment: fixed; /* opcional */
-  background-position: center;
-  background-repeat: no-repeat;
   gap: 20px;
   color: white;
   z-index: 1;
   overflow: hidden;
   text-align: left;
 }
+
 
 header::before {
   content: "";
@@ -273,26 +271,5 @@ footer {
   .carousel-container {
     width: 95vw;
   }
-@media (max-width: 600px) {
-  header {
-    background-size: cover;
-    background-position: center top;
-    padding: 80px 15px 30px;
-    text-align: center;
-    align-items: center;
-  }
-
-  .perfil-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .foto-perfil {
-    width: 120px;
-    height: 120px;
-  }
-
-  .perfil-info {
-    text-align: center;
-  } 
+  
 }
