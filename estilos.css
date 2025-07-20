@@ -162,8 +162,19 @@ section {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   user-select: none;
   flex-shrink: 0;
-  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh; /* limita a altura a 80% da tela */
   object-fit: contain;
+  border-radius: 8px;
 }
 
 .carousel-slide img {
